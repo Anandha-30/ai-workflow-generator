@@ -1,0 +1,115 @@
+@keyframes spinGradient {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes meshDrift {
+  0% {
+    transform: translate3d(-1.5%, -1.5%, 0);
+  }
+  50% {
+    transform: translate3d(1.2%, 1.4%, 0);
+  }
+  100% {
+    transform: translate3d(-1.5%, -1.5%, 0);
+  }
+}
+
+@keyframes noiseDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-1.2%, 0.8%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes glassBreathe {
+  0% {
+    opacity: 0.96;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.96;
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    filter: brightness(0.92);
+  }
+  50% {
+    filter: brightness(1.12);
+  }
+  100% {
+    filter: brightness(0.92);
+  }
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -22px, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes pulseDot {
+  0% {
+    opacity: 0.32;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+  100% {
+    opacity: 0.32;
+    transform: translateY(0);
+  }
+}
+
+.loading-dots span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  margin: 0 2px;
+  background: rgba(255, 255, 255, 0.9);
+  animation: pulseDot 850ms ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 110ms;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 220ms;
+}
+
+@keyframes edgeDash {
+  to {
+    stroke-dashoffset: -26;
+  }
+}
+
+.edge-animated {
+  stroke-dasharray: 10 14;
+  animation: edgeDash 1.2s linear infinite;
+}
+
+.grid-layer {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: var(--grid-unit) var(--grid-unit);
+}

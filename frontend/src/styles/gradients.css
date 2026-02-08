@@ -1,0 +1,65 @@
+.animated-mesh::before {
+  content: "";
+  position: absolute;
+  inset: -32%;
+  background: radial-gradient(circle at 20% 20%, rgba(71, 128, 255, 0.24), transparent 48%),
+    radial-gradient(circle at 80% 24%, rgba(142, 96, 255, 0.22), transparent 50%),
+    radial-gradient(circle at 52% 86%, rgba(44, 188, 255, 0.18), transparent 52%);
+  filter: blur(64px);
+  animation: spinGradient 42s linear infinite, meshDrift 24s cubic-bezier(0.22, 1, 0.36, 1)
+      infinite;
+  pointer-events: none;
+}
+
+.animated-mesh::after {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  background: conic-gradient(
+    from 120deg,
+    rgba(21, 36, 92, 0.22),
+    rgba(58, 26, 92, 0.18),
+    rgba(10, 68, 108, 0.22),
+    rgba(21, 36, 92, 0.22)
+  );
+  filter: blur(86px);
+  opacity: 0.48;
+  animation: spinGradient 56s linear infinite reverse;
+  pointer-events: none;
+}
+
+.mesh-orb {
+  width: 34vw;
+  height: 34vw;
+  border-radius: 999px;
+  filter: blur(44px);
+  opacity: 0.22;
+  animation: floatOrb 16s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.mesh-orb-a {
+  left: -8vw;
+  top: 12vh;
+  background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.7), transparent 64%);
+}
+
+.mesh-orb-b {
+  right: -10vw;
+  top: 6vh;
+  animation-delay: -3s;
+  background: radial-gradient(circle at 60% 40%, rgba(168, 85, 247, 0.72), transparent 66%);
+}
+
+.mesh-orb-c {
+  left: 30vw;
+  bottom: -18vw;
+  animation-delay: -6s;
+  background: radial-gradient(circle at 50% 40%, rgba(6, 182, 212, 0.72), transparent 66%);
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.34'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+  opacity: 0.1;
+  animation: noiseDrift 18s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
